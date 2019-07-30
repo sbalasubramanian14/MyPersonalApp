@@ -11,3 +11,13 @@ before_script:
 
 script:
   - npm run build
+
+install:
+  - npm install -g firebase-tools
+
+env:
+  global:
+    - FIREBASE_TOKEN=1/KKZalh7zUcqbP-4oixDAOWH-Ltl7XmtHRuRi8bCImgc
+
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
